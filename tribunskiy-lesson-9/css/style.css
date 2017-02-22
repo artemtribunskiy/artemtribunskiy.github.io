@@ -1,0 +1,29 @@
+img {
+	width: 60px;
+}
+section#main {
+	padding-top: 100px;
+	text-align: center;
+}
+.icon {
+	height: 150px;
+	border: 1px solid #000;
+	padding-top: 50px;
+}
+section#box {
+	padding-top: 100px;
+}
+.level_1 {
+	height: 100px;
+	border: 2px solid #000;
+}
+.element {
+height: 50px;
+background-color: #5f5;
+border: 1px solid #000; 
+}
+
+.level_2 {
+	padding-top: 25px;
+	padding-bottom: 200px;
+}
