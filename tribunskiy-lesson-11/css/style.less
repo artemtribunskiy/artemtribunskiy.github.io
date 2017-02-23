@@ -17,6 +17,8 @@
 @bg-koire: #817eff;
 @bg-lara: #f74770;
 @bg-services-list: #fbfbfb;
+@yellow: #ffef3b;
+@grey: #adadad;
 
 /* Bsae settings */
 body {
@@ -305,6 +307,7 @@ i.fa-camera-retro {
 	-o-transform: rotate(-15deg);
 	transform: rotate(-15deg);
 }
+
 /* Works section */
 .works-box {
 	height: 360px;
@@ -352,20 +355,21 @@ i.fa-camera-retro {
 .works-row {
 	margin-top: 3%;
 }
+
 /* Services section */
 .services {
 	&-list {
 		list-style: none;
 			&-item {
+				width: 100px;
 				display: block;
 				margin: 5px auto;
-				//width: 100px;
-				//height: 100px;
 				text-align: center;				
 				background-color: @bg-services-list;
-				/* img {
-					margin-top: 25%;
-				} */
+				&:hover {
+					box-shadow: 0px 0px 36px 0px rgba(20, 20, 21, 0.2);					
+				}
+				
 			}
 	}
 	&-info {
@@ -400,4 +404,103 @@ i.fa-camera-retro {
 		box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
 		margin-top: 5%;
 	}
+}
+
+.active a img {
+	background-color: #fff;	
+	box-shadow: 0px 0px 36px 0px rgba(20, 20, 21, 0.2);
+}	
+
+.panel-default>.panel-heading {
+	h4 {
+		color: @base-red;
+		.opn-bold;
+	}
+}
+
+.feedback {
+	&-box {
+		margin-left: 15px;
+		margin-right: 15px;
+		padding: 10px;
+		p {
+			
+			font-size: 17px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding-left: 30px;
+			padding-right: 30px;
+			span {
+				.opn-bold;
+			}
+		}
+		i.fa-star {
+		color: @yellow;
+	}	
+	}
+
+	&-img {
+		margin-bottom: -64px;
+	}
+	&-shadow {
+		padding: 10px;
+		padding-top: 64px;
+		box-shadow: 0px 0px 27px 0px rgba(20, 20, 21, 0.09);
+	}
+	&-slider-arrows {
+		position: absolute;
+		top: 50%;
+		font-size: 18px;
+		z-index: 999;
+		width: 50px;
+		height: 50px;
+		-webkit-transform: translateY(-9px);
+		-ms-transform: translateY(-9px);
+		-o-transform: translateY(-9px);
+		transform: translateY(-9px);
+		
+		box-shadow: 0px 3px 14px 0px rgba(20, 20, 21, 0.28);
+		
+		padding: 16px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		background-color: @white;
+		&:hover {
+			background-color: @base-red;
+			color: @white;
+			cursor: pointer;
+		}
+				
+	}
+}
+.slick-active {
+	outline: none;
+}
+.arrow-right {
+	right: 0;
+	padding-left: 20px;	
+}
+.arrow-left {
+	left: 0;
+}
+.slick-dots li button:before {
+	width: 21px;
+	height: 7px;
+	color: transparent;
+	background-color: @grey;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;	
+}
+.slick-dots li.slick-active button:before {
+	color: transparent;
+	background-color: @base-red;
+}
+.slick-dots {
+	margin-bottom: -50px;
 }
