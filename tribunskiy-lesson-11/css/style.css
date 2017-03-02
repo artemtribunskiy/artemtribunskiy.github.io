@@ -337,6 +337,9 @@ i.fa-camera-retro {
   margin-top: 3%;
 }
 /* Services section */
+.services-minsize {
+  min-width: 395px;
+}
 .services-list {
   list-style: none;
 }
@@ -693,6 +696,18 @@ section#works a button:active {
     margin: 0 auto;
     margin-bottom: 15px;
   }
+  .services-list-item {
+    display: inline-block;
+  }
+  .services-info .services-btn {
+    display: inline-block;
+    margin-left: 20%;
+  }
+  .services-info img {
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 300px;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .process-box {
@@ -711,6 +726,15 @@ section#works a button:active {
   }
   .services-list-item {
     display: inline-block;
+  }
+  .services-info .services-btn {
+    display: inline-block;
+    margin-left: 30%;
+  }
+  .services-info img {
+    margin-top: 10%;
+    margin-left: 23%;
+    width: 300px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
