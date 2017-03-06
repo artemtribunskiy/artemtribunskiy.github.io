@@ -35,7 +35,7 @@ input, button, textarea {
 header {
 	background: @bg-grey url(../img/main-bg.jpg) no-repeat center center;
 	background-size: cover;
-	min-height: 750px;
+	min-height: 750px;	
 	height: 100vh;
 
 }
@@ -282,7 +282,7 @@ section {
 		height: 2px;
 		background-color: @base-black;
 		position: absolute;
-		-webkit-transform: rotate(90deg) translateY(8px);
+		-webkit-transform: rotate(90deg) translateY(0px); //0 для safari
 		-ms-transform: rotate(90deg) translateY(8px);
 		-o-transform: rotate(90deg) translateY(8px);
 		transform: rotate(90deg) translateY(8px);
@@ -311,7 +311,7 @@ i.fa-camera-retro {
 
 /* Works section */
 .works-box {
-	height: 360px;
+	//height: 360px;
 	position: relative;
 	img {
 		width: 100%;
@@ -370,7 +370,7 @@ i.fa-camera-retro {
 			&-item {
 				width: 100px;
 				display: block;
-				margin: 5px auto;
+				margin: 5px;
 				text-align: center;				
 				background-color: @bg-services-list;
 				&:hover {
@@ -725,6 +725,9 @@ section#works a button {
 } */
 
 @media (min-width: 0px) and (max-width: 480px) {
+	header {
+		max-height: 600px;
+	}
 	.main {
 		&-text {
 			h1 {
@@ -744,7 +747,7 @@ section#works a button {
 		margin: 0;
 	}
 	.works-box {
-		width: 360px;
+		//width: 360px;
 		margin: 0 auto;
 		margin-bottom: 15px;	
 	}
@@ -772,7 +775,7 @@ section#works a button {
 		margin: 0;
 	}
 	.works-box {
-		width: 360px;
+		//width: 360px;
 		margin: 0 auto;
 		margin-bottom: 15px;
 	}

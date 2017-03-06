@@ -264,7 +264,7 @@ section {
   height: 2px;
   background-color: #706b73;
   position: absolute;
-  -webkit-transform: rotate(90deg) translateY(8px);
+  -webkit-transform: rotate(90deg) translateY(0px);
   -ms-transform: rotate(90deg) translateY(8px);
   -o-transform: rotate(90deg) translateY(8px);
   transform: rotate(90deg) translateY(8px);
@@ -289,7 +289,6 @@ i.fa-camera-retro {
 }
 /* Works section */
 .works-box {
-  height: 360px;
   position: relative;
 }
 .works-box img {
@@ -346,7 +345,7 @@ i.fa-camera-retro {
 .services-list-item {
   width: 100px;
   display: block;
-  margin: 5px auto;
+  margin: 5px;
   text-align: center;
   background-color: #fbfbfb;
 }
@@ -679,6 +678,9 @@ section#works a button:active {
 	}
 } */
 @media (min-width: 0px) and (max-width: 480px) {
+  header {
+    max-height: 600px;
+  }
   .main-text h1 {
     font-size: 28px;
   }
@@ -692,7 +694,6 @@ section#works a button:active {
     margin: 0;
   }
   .works-box {
-    width: 360px;
     margin: 0 auto;
     margin-bottom: 15px;
   }
@@ -717,7 +718,6 @@ section#works a button:active {
     margin: 0;
   }
   .works-box {
-    width: 360px;
     margin: 0 auto;
     margin-bottom: 15px;
   }
