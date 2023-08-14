@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.*;
 import java.util.HashMap;
 
-
+//новый коммит
 public class MainActivity extends AppCompatActivity {
     public int quantity = 1;
     int price;
