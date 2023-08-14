@@ -1,13 +1,17 @@
 package edu.domain.myapplication3;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,11 +22,13 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     public int quantity = 1;
     int price;
+
+    String goodsName;
     TextView textView4;// = findViewById(R.id.textView4);
     TextView priceTag;// = findViewById(R.id.priceTag);
     HashMap<String, Integer> mList = new HashMap<String, Integer>();
     Spinner mSpinner;// = findViewById(R.id.spinner1);
-
+    ImageView goodsImageView;
     EditText editTextTextPersonName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         textView4 = findViewById(R.id.textView4);
         priceTag = findViewById(R.id.priceTag);
         mSpinner = findViewById(R.id.spinner1);
+        goodsImageView = findViewById(R.id.imageView2);
 
         mList.put("Fender", 990);
         mList.put("Gibson", 1200);
@@ -57,6 +64,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 quantity = 1;
 //                String item = adapterView.getItemAtPosition(i).toString();
+                goodsName = mSpinner.getSelectedItem().toString();
+                switch (goodsName) {
+                    case "Fender":
+                        goodsImageView.setImageResource(R.drawable.fender1);
+                        break;
+                    case "Gibson":
+                        goodsImageView.setImageResource(R.drawable.gibson);
+                        break;
+                    case "Ibanez":
+                        goodsImageView.setImageResource(R.drawable.ibanez);
+                        break;
+                }
                 Update();
             }
 
@@ -87,7 +106,13 @@ public class MainActivity extends AppCompatActivity {
         cart.quantity = quantity;
         cart.selectedGood = mSpinner.getSelectedItem().toString();
         cart.totalPrice = price;
-       // android.util.Log.d("HELLO:", cart.userName + ", заказал " + cart.selectedGood + ", количество: " + cart.quantity + " штуковины, на сумму: " + cart.totalPrice + "$");
+        //Log.d("HELLO:", cart.userName + ", заказал " + cart.selectedGood + ", количество: " + cart.quantity + " штуковины, на сумму: " + cart.totalPrice + "$");
+        Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
+        orderIntent.putExtra("userNameForIntent", cart.userName);
+        orderIntent.putExtra("selectedGood", cart.selectedGood);
+        orderIntent.putExtra("quantity", cart.quantity);
+        orderIntent.putExtra("totalPrice", cart.totalPrice);
+        startActivity(orderIntent);
     }
 }
 
