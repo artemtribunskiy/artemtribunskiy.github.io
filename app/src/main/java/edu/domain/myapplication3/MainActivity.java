@@ -106,12 +106,14 @@ public class MainActivity extends AppCompatActivity {
         cart.quantity = quantity;
         cart.selectedGood = mSpinner.getSelectedItem().toString();
         cart.totalPrice = price;
+        cart.priceForValue = price/quantity;
         //Log.d("HELLO:", cart.userName + ", заказал " + cart.selectedGood + ", количество: " + cart.quantity + " штуковины, на сумму: " + cart.totalPrice + "$");
         Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
         orderIntent.putExtra("userNameForIntent", cart.userName);
         orderIntent.putExtra("selectedGood", cart.selectedGood);
         orderIntent.putExtra("quantity", cart.quantity);
         orderIntent.putExtra("totalPrice", cart.totalPrice);
+        orderIntent.putExtra("priceForValue", cart.priceForValue);
         startActivity(orderIntent);
     }
 }

@@ -5,4 +5,6 @@ public class Order {
     public String selectedGood;
     public int quantity;
     public int totalPrice;
+
+    public int priceForValue;
 }
